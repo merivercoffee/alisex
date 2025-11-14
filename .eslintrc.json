@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:import/recommended", "prettier"],
+  "plugins": ["import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external", "internal"], ["parent", "sibling", "index"]],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
+  },
+  "ignorePatterns": ["node_modules/", ".next/", "dist/", "out/", "coverage/"]
+}
