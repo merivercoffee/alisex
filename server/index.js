@@ -19,6 +19,8 @@ app.use(
   })
 );
 
+app.use('/uploads', express.static('server/uploads'));
+
 currencyConverter.updateRates();
 setInterval(() => currencyConverter.updateRates(), 24 * 60 * 60 * 1000);
 
@@ -26,6 +28,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
+app.use('/api/images', require('./routes/images'));
 
 app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'Server is running' });
